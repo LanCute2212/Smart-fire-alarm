@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#0f172a">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="24dp">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="←"
+            android:textSize="18sp"
+            android:backgroundTint="#334155"
+            android:textColor="#ffffff"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Admin Provisioning"
+            android:textColor="#ffffff"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Khởi tạo thiết bị phần cứng mới. Hành động này sẽ tạo ra một Claim Token duy nhất."
+        android:textColor="#94a3b8"
+        android:textSize="14sp"
+        android:layout_marginBottom="24dp"/>
+
+    <EditText
+        android:id="@+id/etDeviceId"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Device ID (Ví dụ: ESP32_002)"
+        android:textColorHint="#64748b"
+        android:textColor="#ffffff"
+        android:background="#1e293b"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etDeviceName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Tên thiết bị (Ví dụ: Cảm biến lô hàng 1)"
+        android:textColorHint="#64748b"
+        android:textColor="#ffffff"
+        android:background="#1e293b"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etMacAddress"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Địa chỉ MAC (Tuỳ chọn)"
+        android:textColorHint="#64748b"
+        android:textColor="#ffffff"
+        android:background="#1e293b"
+        android:padding="12dp"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnProvision"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="GENERATE TOKEN"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#ef4444"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="24dp"/>
+
+    <LinearLayout
+        android:id="@+id/tokenContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="#450a0a"
+        android:padding="16dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="THIẾT BỊ ĐÃ KHỞI TẠO THÀNH CÔNG!"
+            android:textColor="#4ade80"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Claim Token:"
+            android:textColor="#cbd5e1"
+            android:textSize="12sp"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tvGeneratedToken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="XXX-XXX-XXX"
+            android:textColor="#ffffff"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btnCopyToken"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Copy Token"
+            android:backgroundTint="#3b82f6"
+            android:textColor="#ffffff"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Status message"
+        android:textColor="#ef4444"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"/>
+
+</LinearLayout>

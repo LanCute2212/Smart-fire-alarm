@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0f172a">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginBottom="32dp">
+            <ImageButton android:id="@+id/btnBack"
+                android:layout_width="40dp" android:layout_height="40dp"
+                android:src="@android:drawable/ic_media_previous"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:tint="#94a3b8"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Add Device" android:textColor="#ffffff"
+                android:textSize="22sp" android:textStyle="bold" android:paddingStart="12dp"/>
+        </LinearLayout>
+
+        <!-- Icon -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🔥" android:textSize="56sp"
+            android:layout_gravity="center" android:layout_marginBottom="8dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Enter the Device ID and Claim Token\nfound on your device packaging."
+            android:textColor="#94a3b8" android:textSize="14sp"
+            android:gravity="center" android:layout_marginBottom="32dp"/>
+
+        <!-- Device ID -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Device ID" android:textColor="#94a3b8" android:textSize="12sp"
+            android:layout_marginBottom="4dp"/>
+        <EditText android:id="@+id/etDeviceId"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:background="#1e293b" android:textColor="#ffffff"
+            android:textColorHint="#4a5568" android:hint="e.g. DEV_001"
+            android:paddingHorizontal="16dp" android:inputType="text"
+            android:textAllCaps="true" android:layout_marginBottom="16dp"/>
+
+        <!-- Claim Token -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Claim Token" android:textColor="#94a3b8" android:textSize="12sp"
+            android:layout_marginBottom="4dp"/>
+        <EditText android:id="@+id/etClaimToken"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:background="#1e293b" android:textColor="#ffffff"
+            android:textColorHint="#4a5568" android:hint="e.g. XK9-2A4-MNQ"
+            android:paddingHorizontal="16dp" android:inputType="text"
+            android:textAllCaps="true" android:layout_marginBottom="16dp"/>
+
+        <!-- Location -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Location (optional)" android:textColor="#94a3b8" android:textSize="12sp"
+            android:layout_marginBottom="4dp"/>
+
+        <Spinner android:id="@+id/spinnerLocation"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:background="#1e293b" android:layout_marginBottom="32dp"/>
+
+        <!-- Claim Button -->
+        <Button android:id="@+id/btnClaim"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="Add Device" android:textSize="16sp"
+            android:backgroundTint="#ef4444" android:textColor="#ffffff"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Status message -->
+        <TextView android:id="@+id/tvStatus"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="" android:textColor="#10b981"
+            android:textSize="14sp" android:gravity="center"
+            android:visibility="gone"/>
+
+        <!-- Divider -->
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="#334155" android:layout_marginVertical="24dp"/>
+
+        <!-- Info box -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="#1e293b" android:padding="16dp" android:orientation="vertical">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="ℹ️  Where to find the Token?"
+                android:textColor="#ffffff" android:textSize="14sp" android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="The Device ID and Claim Token are printed on a sticker inside the product box or on the back of the sensor device."
+                android:textColor="#94a3b8" android:textSize="13sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

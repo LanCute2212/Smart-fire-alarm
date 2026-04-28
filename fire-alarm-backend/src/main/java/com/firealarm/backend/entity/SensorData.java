@@ -27,6 +27,9 @@ public class SensorData {
     @Column
     private Double calculatedRiskScore;
 
+    @Column
+    private Integer batteryPercent;
+
     @Column(timestamp = true)
     private Instant time;
 }

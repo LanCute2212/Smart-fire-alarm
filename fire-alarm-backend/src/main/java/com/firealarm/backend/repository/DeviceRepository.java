@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DeviceRepository extends JpaRepository<Device, String> {
+    java.util.Optional<Device> findByClaimToken(String claimToken);
+    java.util.List<Device> findByOwner_Username(String username);
+    java.util.List<Device> findByOwner_UsernameOrStatusNot(String username, com.firealarm.backend.entity.enums.DeviceStatus status);
 }

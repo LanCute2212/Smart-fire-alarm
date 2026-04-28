@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0f172a">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ===== TOP BAR ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FireGuard"
+                    android:textColor="#ffffff"
+                    android:textSize="22sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvRoleBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="USER MODE"
+                    android:textColor="#3b82f6"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:background="#1e293b"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnAddDevice"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="+ Add"
+                android:textSize="12sp"
+                android:backgroundTint="#10b981"
+                android:textColor="#ffffff"
+                android:layout_marginEnd="4dp"/>
+
+            <Button
+                android:id="@+id/btnHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="History"
+                android:textSize="12sp"
+                android:backgroundTint="#334155"
+                android:textColor="#94a3b8"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Logout"
+                android:textSize="12sp"
+                android:backgroundTint="#ef4444"/>
+        </LinearLayout>
+
+        <!-- ===== DEVICE SELECTOR ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_card_rounded"
+            android:padding="8dp"
+            android:layout_marginBottom="12dp">
+
+            <Spinner
+                android:id="@+id/spinnerDevices"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="44dp"/>
+
+            <!-- Battery indicator -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔋"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/tvBattery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--%"
+                    android:textColor="#10b981"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:paddingStart="2dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ===== STATUS CARD ===== -->
+        <LinearLayout
+            android:id="@+id/statusCard"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_status_safe"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/tvStatusIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✅"
+                android:textSize="28sp"/>
+
+            <TextView
+                android:id="@+id/tvStatusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ALL CLEAR — SAFE"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"/>
+        </LinearLayout>
+
+        <!-- ===== QUICK ACTION (Silence) ===== -->
+        <Button
+            android:id="@+id/btnSilence"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="🔇  Silence Alarm (30s)"
+            android:backgroundTint="#7c3aed"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"/>
+
+        <!-- ===== SENSOR METRICS ===== -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:layout_marginBottom="16dp">
+
+            <!-- TEMP -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_card_rounded"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌡️"
+                    android:textSize="24sp"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:id="@+id/tvTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--°C"
+                    android:textColor="#f59e0b"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temperature"
+                    android:textColor="#94a3b8"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <!-- HUMID -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_card_rounded"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💧"
+                    android:textSize="24sp"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:id="@+id/tvHumid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--%"
+                    android:textColor="#3b82f6"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Humidity"
+                    android:textColor="#94a3b8"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <!-- GAS -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_card_rounded"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="☁️"
+                    android:textSize="24sp"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:id="@+id/tvGas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-- ppm"
+                    android:textColor="#a855f7"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Air Quality (Gas)"
+                    android:textColor="#94a3b8"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <!-- RISK -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/bg_card_rounded"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚠️"
+                    android:textSize="24sp"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:id="@+id/tvRisk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="#10b981"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Risk Score"
+                    android:textColor="#94a3b8"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+        </GridLayout>
+
+        <!-- ===== REALTIME CHART ===== -->
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChart"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/bg_card_rounded"
+            android:padding="8dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- ===== FLOOR MAP ===== -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Floor Map"
+            android:textColor="#94a3b8"
+            android:textSize="13sp"
+            android:layout_marginBottom="4dp"/>
+
+        <com.example.firealarmapp.views.FloorMapView
+            android:id="@+id/floorMapView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/bg_card_rounded"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- ===== LAST SEEN ===== -->
+        <TextView
+            android:id="@+id/tvLastSeen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Last update: --"
+            android:textColor="#64748b"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:paddingBottom="16dp"/>
+
+    </LinearLayout>
+</ScrollView>

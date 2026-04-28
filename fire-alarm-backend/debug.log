@@ -1,0 +1,5 @@
+[0428/045738.146:ERROR:ui\base\resource\resource_bundle.cc:1075] Failed to load C:\Program Files\Docker\Docker\frontend\chrome_100_percent.pak
+Some features may not be available.
+[0428/045738.148:WARNING:ui\base\resource\resource_bundle.cc:494] locale_file_path.empty() for locale 
+[0428/045738.148:ERROR:ui\base\resource\resource_bundle.cc:1075] Failed to load C:\Program Files\Docker\Docker\frontend\resources.pak
+Some features may not be available.

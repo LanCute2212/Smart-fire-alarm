@@ -3,7 +3,7 @@ spring:
     name: fire-alarm-backend
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/firedb
+    url: jdbc:postgresql://localhost:5432/firedb?options=-c%20timezone=Asia/Ho_Chi_Minh
     username: fireuser
     password: firepassword
     driver-class-name: org.postgresql.Driver
@@ -15,7 +15,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc.time_zone: Asia/Ho_Chi_Minh
 
 # MQTT Properties
 mqtt:
