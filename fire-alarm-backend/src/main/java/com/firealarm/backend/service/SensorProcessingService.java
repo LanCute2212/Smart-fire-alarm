@@ -85,14 +85,23 @@ public class SensorProcessingService {
     }
 
     private double calculateRiskScore(SensorPayload payload, double tempRocWeight) {
-        double score = 0;
-
+        // Ưu tiên tuyệt đối: Thấy lửa là 100 điểm
         if (payload.getIrFlame() != null && payload.getIrFlame() == 1) {
-            score += 50;
+            return 100.0;
         }
 
-        if (payload.getGasLevel() != null && payload.getGasLevel() > 300) {
-            score += 30;
+        double score = 0;
+
+        // Logic chia bậc khí Gas đồng bộ với Arduino
+        if (payload.getGasLevel() != null) {
+            double gas = payload.getGasLevel();
+            if (gas > 800 && gas <= 1500) {
+                score += 30;
+            } else if (gas > 1500 && gas < 3000) {
+                score += 50;
+            } else if (gas >= 3000) {
+                score += 60;
+            }
         }
 
         if (payload.getTemperature() != null && payload.getTemperature() > 50) {
